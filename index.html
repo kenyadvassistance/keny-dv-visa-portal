@@ -114,7 +114,27 @@
     });
   }
 
-  function sendConfirmation() {
+  function sendConfirmation(function sendConfirmation() {
+  const name = document.getElementById("fullName").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const code = document.getElementById("mpesaCode").value.trim().toUpperCase();
+
+  if (!name || !phone || !code) {
+    alert("Please fill in all fields.");
+    return;
+  }
+
+  const message =
+    Hello, I have paid KSh 300 for DV Visa Assistance.\n +
+    Name: ${name}\n +
+    Phone: ${phone}\n +
+    M-Pesa Code: ${code};
+
+  const whatsappURL =
+    https://wa.me/254708424984?text=${encodeURIComponent(message)};
+
+  window.open(whatsappURL, "_blank");
+}) {
     const name = document.getElementById("fullName").value.trim();
     const phone = document.getElementById("phone").value.trim();
     const code = document.getElementById("mpesaCode").value.trim().toUpperCase();
