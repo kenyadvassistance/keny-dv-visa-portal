@@ -1,0 +1,129 @@
+[11:26 AM, 11/14/2026] jonfx: <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kenya DV Visa Assistance Portal</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+    body { background: #f4f7f6; color: #222; line-height: 1.6; }
+    header { background: #0b3d2e; color: #fff; padding: 20px; text-align: center; }
+    header h1 { font-size: 1.5rem; margin-bottom: 5px; }
+    header p { font-size: 0.9rem; color: #cde6dd; }
+    .container { max-width: 750px; margin: 20px auto; padding: 0 15px; }
+    .card { background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 18px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+    h2 { color: #0b3d2e; font-size: 1.2rem; margin-bottom: 10px; border-bottom: 2px solid #e6efe9; padding-bottom: 5px; }
+    ul { padding-left: 20px; margin-bottom: 10px; }
+    li { margin-bottom: 6px; }
+    .pay-box { background: #eef8f3; border: 1px solid #b8decb; border-radius: 8px; padding: 15px; margin: 12px 0; }
+    .pay-row { display: flex; justify-content: space-between; align-items: center; margin: 10px 0; flex-wrap: wrap; gap: 8px; }
+    .pay-value { font-size: 1.15rem; font-weight: bold; color: #0b3d2e; }
+    button.copy-btn { background: #0b3d2e; color: #fff; border: none; padding: 8px 14px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; }
+    button.copy-btn:active { background: #16664e; }
+    .form-group { margin-bottom: 12px; }
+    label { display: block; font-weight: bold; margin-bottom: 4px; font-size: 0.95rem; }
+    input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem; }
+    .submit-btn { width: 100%; background: #25D366; color: #fff; border: none; padding: 12px; font-size: 1rem; font-weight: bold; border-radius: 6px; cursor: pointer; margin-top: 5px; }
+    .disclaimer { font-size: 0.82rem; color: #555; background: #fff8e6; border-left: 4px solid #f0ad4e; padding: 12px; border-radius: 6px; }
+    footer { text-align: center; padding: 15px; font-size: 0.85rem; color: #666; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Kenya DV Visa Assistance Portal</h1>
+  <p>Guided U.S. Diversity Visa Application &amp; Photo Check Support</p>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2>How Our Assistance Works</h2>
+    <ul>
+      <li><strong>Step 1:</strong> Pay the <strong>KSh 300</strong> service assistance fee via M-Pesa Paybill below.</li>
+      <li><strong>Step 2:</strong> Enter your details and M-Pesa confirmation code in the form below.</li>
+      <li><strong>Step 3:</strong> Receive personalized form review, photo compliance check, and submission support.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>M-Pesa Paybill Payment (KSh 300)</h2>
+    <p>Go to <strong>M-Pesa &gt; Lipa na M-Pesa &gt; Paybill</strong> and use these details:</p>
+    <div class="pay-box">
+      <div class="pay-row">
+        <span>Business Number (Paybill): <span class="pay-value" id="paybill">247247</span></span>
+        <button class="copy-btn" onclick="copyText('247247', this)">Copy Paybill</button>
+      </div>
+      <div class="pay-row">
+        <span>Account Number: <span class="pay-value" id="account">1240184524725</span></span>
+        <button class="copy-btn" onclick="copyText('1240184524725', this)">Copy Account</button>
+      </div>
+      <div class="pay-row">
+        <span>Amount: <span class="pay-value">KSh 300</span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Confirm Your Payment</h2>
+    <p style="margin-bottom:10px;">After paying, fill in your details below to send your M-Pesa code for verification:</p>
+    <div class="form-group">
+      <label for="fullName">Full Name (as on Passport/ID)</label>
+      <input type="text" id="fullName" placeholder="e.g. Jane Wanjiku Kamau" required>
+    </div>
+    <div class="form-group">
+      <label for="phone">Your Phone Number</label>
+      <input type="tel" id="phone" placeholder="e.g. 0708424984" required>
+    </div>
+    <div class="form-group">
+      <label for="mpesaCode">M-Pesa Transaction Code</label>
+      <input type="text" id="mpesaCode" placeholder="e.g. QK89X21LMN" required>
+    </div>
+    <button class="submit-btn" onclick="sendConfirmation()">Send Payment Confirmation</button>
+  </div>
+
+  <div class="card">
+    <h2>Frequently Asked Questions</h2>
+    <ul>
+      <li><strong>What is the KSh 300 fee for?</strong> It covers our private assistance service, including reviewing your details and formatting your passport photo to meet DV requirements.</li>
+      <li><strong>Do I need a passport?</strong> Check the current year's official U.S. Department of State DV instructions before applying.</li>
+      <li><strong>How fast do I get assisted?</strong> Once your M-Pesa code is verified, we reach out to guide you step by step.</li>
+    </ul>
+  </div>
+
+  <div class="disclaimer">
+    <strong>Important Disclaimer:</strong> This portal is an independent private assistance service in Kenya and is <strong>not affiliated with or endorsed by the U.S. Government</strong> or the U.S. Department of State. Entering the official Diversity Visa Lottery directly on the official government website is free of charge.
+  </div>
+
+</div>
+
+<footer>
+  &copy; 2026 Kenya DV Visa Assistance Portal
+</footer>
+
+<script>
+  function copyText(text, btn) {
+    navigator.clipboard.writeText(text).then(function() {
+      const original = btn.innerText;
+      btn.innerText = "Copied!";
+      setTimeout(() => { btn.innerText = original; }, 2000);
+    });
+  }
+
+  function sendConfirmation() {
+    const name = document.getElementById("fullName").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const code = document.getElementById("mpesaCode").value.trim().toUpperCase();
+    if (!name || !phone || !code) {
+      alert("Please fill in your Full Name, Phone Number, and M-Pesa Transaction Code.");
+      return;
+    }
+    const message = Hello, I have paid KSh 300 for DV Visa Assistance.%0AName: ${name}%0APhone: ${phone}%0AM-Pesa Code: ${code};
+    // Replace 254708424984 below with your actual WhatsApp number (starting with 254)
+    window.open(https://wa.me on 254708424984{message}, "_blank");
+  }
+</script>
+
+</body>
+</html>
+
