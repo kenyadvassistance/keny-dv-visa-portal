@@ -1,4 +1,4 @@
-[11:26 AM, 11/14/2026] jonfx: <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -92,7 +92,7 @@
   </div>
 
   <div class="disclaimer">
-    <strong>Important Disclaimer:</strong> This portal is an independent private assistance service in Kenya and is <strong>not affiliated with or endorsed by the U.S. Government</strong> or the U.S. Department of State. Entering the official Diversity Visa Lottery directly on the official government website is free of charge.
+    <strong>Important Disclaimer:</strong> This portal is an independent private assistance service in Kenya and is <strong>not affiliated with or endorsed by the U.S. Government</strong> or the U.S. Department of State. It provides informational support only and does not submit applications on your behalf.
   </div>
 
 </div>
@@ -106,7 +106,9 @@
     navigator.clipboard.writeText(text).then(function() {
       const original = btn.innerText;
       btn.innerText = "Copied!";
-      setTimeout(() => { btn.innerText = original; }, 2000);
+      setTimeout(function() {
+        btn.innerText = original;
+      }, 2000);
     });
   }
 
@@ -114,16 +116,17 @@
     const name = document.getElementById("fullName").value.trim();
     const phone = document.getElementById("phone").value.trim();
     const code = document.getElementById("mpesaCode").value.trim().toUpperCase();
+
     if (!name || !phone || !code) {
       alert("Please fill in your Full Name, Phone Number, and M-Pesa Transaction Code.");
       return;
     }
-    const message = Hello, I have paid KSh 300 for DV Visa Assistance.%0AName: ${name}%0APhone: ${phone}%0AM-Pesa Code: ${code};
-    // Replace 254708424984 below with your actual WhatsApp number (starting with 254)
-    window.open(https://wa.me on 254708424984{message}, "_blank");
+
+    const message = "Hello, I have paid KSh 300 for DV Visa Assistance.\nName: " + name + "\nPhone: " + phone + "\nM-Pesa Code: " + code;
+    const waLink = "https://wa.me/254708424984?text=" + encodeURIComponent(message);
+    window.open(waLink, "_blank");
   }
 </script>
 
 </body>
 </html>
-
