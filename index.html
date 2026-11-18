@@ -1,154 +1,609 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kenya DV Visa Assistance Portal</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
-    body { background: #f4f7f6; color: #222; line-height: 1.6; }
-    header { background: #0b3d2e; color: #fff; padding: 20px; text-align: center; }
-    header h1 { font-size: 1.5rem; margin-bottom: 5px; }
-    header p { font-size: 0.9rem; color: #cde6dd; }
-    header a { color: #fff; font-weight: bold; }
-    .container { max-width: 750px; margin: 20px auto; padding: 0 15px; }
-    .card { background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 18px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
-    h2 { color: #0b3d2e; font-size: 1.2rem; margin-bottom: 10px; border-bottom: 2px solid #e6efe9; padding-bottom: 5px; }
-    ul { padding-left: 20px; margin-bottom: 10px; }
-    li { margin-bottom: 6px; }
-    .pay-box { background: #eef8f3; border: 1px solid #b8decb; border-radius: 8px; padding: 15px; margin: 12px 0; }
-    .pay-row { display: flex; justify-content: space-between; align-items: center; margin: 10px 0; flex-wrap: wrap; gap: 8px; }
-    .pay-value { font-size: 1.15rem; font-weight: bold; color: #0b3d2e; }
-    button.copy-btn { background: #0b3d2e; color: #fff; border: none; padding: 8px 14px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; }
-    button.copy-btn:active { background: #16664e; }
-    .form-group { margin-bottom: 12px; }
-    label { display: block; font-weight: bold; margin-bottom: 4px; font-size: 0.95rem; }
-    input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem; }
-    .submit-btn { width: 100%; background: #25D366; color: #fff; border: none; padding: 12px; font-size: 1rem; font-weight: bold; border-radius: 6px; cursor: pointer; margin-top: 5px; }
-    .disclaimer { font-size: 0.82rem; color: #555; background: #fff8e6; border-left: 4px solid #f0ad4e; padding: 12px; border-radius: 6px; }
-    footer { text-align: center; padding: 15px; font-size: 0.85rem; color: #666; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kenya DV Assistance Portal</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #1d2939;
+  line-height: 1.6;
+}
+
+:root {
+  --navy: #102746;
+  --blue: #214c78;
+  --gold: #e3bd59;
+  --white: #ffffff;
+}
+
+header {
+  background: var(--navy);
+  color: white;
+  padding: 16px 5%;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.logo {
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: var(--gold);
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: var(--gold);
+}
+
+.hero {
+  background: linear-gradient(135deg, #102746, #285781);
+  color: white;
+  text-align: center;
+  padding: 75px 20px;
+}
+
+.hero .badge {
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  padding: 7px 15px;
+  border-radius: 30px;
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.hero h1 span {
+  color: var(--gold);
+}
+
+.hero p {
+  max-width: 650px;
+  margin: auto auto 25px;
+  color: #e2eaf4;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 5px;
+}
+
+.gold {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.outline {
+  border: 1px solid white;
+  color: white;
+}
+
+section {
+  padding: 55px 5%;
+}
+
+.container {
+  max-width: 1050px;
+  margin: auto;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.heading h2 {
+  color: var(--navy);
+  font-size: 29px;
+}
+
+.heading p {
+  color: #68778b;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.payment {
+  background: #eaf0f7;
+}
+
+.payment-card {
+  background: white;
+  max-width: 550px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+}
+
+.payment-card h3 {
+  text-align: center;
+  color: var(--navy);
+}
+
+.price {
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  color: var(--navy);
+}
+
+.price small {
+  font-size: 15px;
+  color: #68778b;
+}
+
+.details {
+  background: #f4f7fb;
+  padding: 15px;
+  margin-top: 12px;
+  border-radius: 9px;
+}
+
+.details small {
+  display: block;
+  color: #66758a;
+}
+
+.details strong {
+  font-size: 19px;
+  color: var(--navy);
+}
+
+.notice {
+  background: #fff7e5;
+  border-left: 4px solid var(--gold);
+  padding: 14px;
+  border-radius: 7px;
+  margin-top: 20px;
+  font-size: 13px;
+}
+
+form {
+  max-width: 650px;
+  margin: auto;
+  background: white;
+  padding: 28px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin: 15px 0 6px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #d4dce6;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: 2px solid #b9cde2;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+}
+
+.submit {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.faq {
+  max-width: 800px;
+  margin: auto;
+}
+
+details {
+  background: white;
+  border-radius: 10px;
+  padding: 17px;
+  margin-bottom: 12px;
+  border: 1px solid #e1e8f0;
+}
+
+summary {
+  font-weight: bold;
+  color: var(--navy);
+  cursor: pointer;
+}
+
+details p {
+  margin-top: 10px;
+  color: #66758a;
+}
+
+.disclaimer {
+  background: #fff6e1;
+  border: 1px solid #ead59c;
+  padding: 22px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+footer {
+  background: var(--navy);
+  color: white;
+  text-align: center;
+  padding: 30px 15px;
+}
+
+footer p {
+  color: #cbd7e5;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+footer a {
+  color: var(--gold);
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 18px;
+  background: #25d366;
+  color: white;
+  text-decoration: none;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 27px;
+  box-shadow: 0 4px 15px rgba(0,0,0,.2);
+  z-index: 999;
+}
+
+@media(max-width:600px) {
+  nav {
+    justify-content: center;
+  }
+
+  nav .logo {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav a {
+    margin: 5px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  section {
+    padding: 40px 5%;
+  }
+
+  .heading h2 {
+    font-size: 25px;
+  }
+
+  .payment-card, form {
+    padding: 20px;
+  }
+}
+</style>
 </head>
+
 <body>
 
 <header>
-  <h1>Kenya DV Visa Assistance Portal</h1>
-  <p>Guided U.S. Diversity Visa Application &amp; Photo Check Support</p>
-  <p>WhatsApp: <a href="https://wa.me/254708424984">0708424984</a></p>
+<nav>
+  <div class="logo">🇰🇪 Kenya DV <span>Assistance</span></div>
+
+  <div>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#payment">Payment</a>
+    <a href="#confirm">Confirm</a>
+  </div>
+</nav>
 </header>
 
+<section class="hero" id="home">
+  <div class="badge">PRIVATE APPLICATION SUPPORT</div>
+
+  <h1>Your DV Application Journey<br>
+  <span>Made Simpler</span></h1>
+
+  <p>
+    Guidance with application preparation, photo requirements,
+    information review and customer support.
+  </p>
+
+  <a href="#payment" class="btn gold">Get Assistance</a>
+  <a href="#services" class="btn outline">Explore Services</a>
+</section>
+
+<section id="services">
 <div class="container">
 
-  <div class="card">
-    <h2>How Our Assistance Works</h2>
-    <ul>
-      <li><strong>Step 1:</strong> Pay the <strong>KSh 300</strong> service assistance fee via M-Pesa Paybill below.</li>
-      <li><strong>Step 2:</strong> Enter your details and M-Pesa confirmation code in the form below.</li>
-      <li><strong>Step 3:</strong> Receive personalized form review, photo compliance check, and submission support.</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h2>M-Pesa Paybill Payment (KSh 300)</h2>
-    <p>Go to <strong>M-Pesa &gt; Lipa na M-Pesa &gt; Paybill</strong> and use these details:</p>
-    <div class="pay-box">
-      <div class="pay-row">
-        <span>Business Number (Paybill): <span class="pay-value" id="paybill">247247</span></span>
-        <button class="copy-btn" onclick="copyText('247247', this)">Copy Paybill</button>
-      </div>
-      <div class="pay-row">
-        <span>Account Number: <span class="pay-value" id="account">1240184524725</span></span>
-        <button class="copy-btn" onclick="copyText('1240184524725', this)">Copy Account</button>
-      </div>
-      <div class="pay-row">
-        <span>Amount: <span class="pay-value">KSh 300</span></span>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <h2>Confirm Your Payment</h2>
-    <p style="margin-bottom:10px;">After paying, fill in your details below to send your M-Pesa code for verification:</p>
-    <div class="form-group">
-      <label for="fullName">Full Name (as on Passport/ID)</label>
-      <input type="text" id="fullName" placeholder="e.g. Jane Wanjiku Kamau" required>
-    </div>
-    <div class="form-group">
-      <label for="phone">Your Phone Number</label>
-      <input type="tel" id="phone" placeholder="e.g. 0708424984" required>
-    </div>
-    <div class="form-group">
-      <label for="mpesaCode">M-Pesa Transaction Code</label>
-      <input type="text" id="mpesaCode" placeholder="e.g. QK89X21LMN" required>
-    </div>
-    <button class="submit-btn" onclick="sendConfirmation()">Send Payment Confirmation</button>
-  </div>
-
-  <div class="card">
-    <h2>Frequently Asked Questions</h2>
-    <ul>
-      <li><strong>What is the KSh 300 fee for?</strong> It covers our private assistance service, including reviewing your details and formatting your passport photo to meet DV requirements.</li>
-      <li><strong>Do I need a passport?</strong> Check the current year's official U.S. Department of State DV instructions before applying.</li>
-      <li><strong>How fast do I get assisted?</strong> Once your M-Pesa code is verified, we reach out to guide you step by step.</li>
-    </ul>
-  </div>
-
-  <div class="disclaimer">
-    <strong>Important Disclaimer:</strong> This portal is an independent private assistance service in Kenya and is <strong>not affiliated with or endorsed by the U.S. Government</strong> or the U.S. Department of State. It provides informational support only and does not submit applications on your behalf.
-  </div>
-
+<div class="heading">
+  <h2>Our Assistance Services</h2>
+  <p>Support throughout your application preparation.</p>
 </div>
 
+<div class="cards">
+
+<div class="card">
+  <div class="icon">📝</div>
+  <h3>Application Guidance</h3>
+  <p>Guidance on completing application information and understanding requirements.</p>
+</div>
+
+<div class="card">
+  <div class="icon">📸</div>
+  <h3>Photo Assistance</h3>
+  <p>Help checking photos against official requirements.</p>
+</div>
+
+<div class="card">
+  <div class="icon">🔍</div>
+  <h3>Information Review</h3>
+  <p>Review assistance to help identify incomplete information and common errors.</p>
+</div>
+
+<div class="card">
+  <div class="icon">💬</div>
+  <h3>Customer Support</h3>
+  <p>Contact us for assistance and questions about our service.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="payment" id="payment">
+<div class="container">
+
+<div class="heading">
+  <h2>Payment Instructions</h2>
+  <p>Private assistance service fee</p>
+</div>
+
+<div class="payment-card">
+
+<h3>Assistance Fee</h3>
+
+<div class="price">KSh 300 <small>one-time</small></div>
+
+<div class="details">
+  <small>M-Pesa Paybill</small>
+  <strong>247247</strong>
+</div>
+
+<div class="details">
+  <small>Account Number</small>
+  <strong>1240184524725</strong>
+</div>
+
+<div class="details">
+  <small>Amount</small>
+  <strong>KSh 300</strong>
+</div>
+
+<div class="notice">
+  This is a private assistance fee, not a U.S. government fee.
+  Payment does not guarantee DV selection or visa approval.
+</div>
+
+<a href="#confirm" class="btn gold" style="display:block;text-align:center;margin-top:20px">
+  Confirm Payment
+</a>
+
+</div>
+</div>
+</section>
+
+<section id="confirm">
+<div class="container">
+
+<div class="heading">
+  <h2>Payment Confirmation</h2>
+  <p>Submit your payment details for confirmation.</p>
+</div>
+
+<form id="paymentForm">
+
+<label>Full Name</label>
+<input id="fullname" type="text" placeholder="Your full name" required>
+
+<label>Phone Number</label>
+<input id="phone" type="tel" placeholder="07XXXXXXXX" required>
+
+<label>M-Pesa Transaction Code</label>
+<input id="receipt" type="text" placeholder="Transaction code" required>
+
+<label>Amount Paid</label>
+<select id="amount" required>
+  <option value="">Select amount</option>
+  <option value="KSh 300">KSh 300</option>
+  <option value="Other">Other</option>
+</select>
+
+<label>Additional Message</label>
+<textarea id="message" rows="3" placeholder="Optional"></textarea>
+
+<button class="btn gold submit" type="submit">
+  Submit via WhatsApp
+</button>
+
+</form>
+</div>
+</section>
+
+<section id="faq">
+<div class="container">
+
+<div class="heading">
+  <h2>Frequently Asked Questions</h2>
+</div>
+
+<div class="faq">
+
+<details>
+<summary>Is this an official government website?</summary>
+<p>No. This is an independent private assistance service and is not affiliated with the U.S. government.</p>
+</details>
+
+<details>
+<summary>Does payment guarantee selection?</summary>
+<p>No. Payment is for assistance only. It does not guarantee selection or visa issuance.</p>
+</details>
+
+<details>
+<summary>Can I apply without an agent?</summary>
+<p>Yes. You may apply independently through the official U.S. government website without paying an agent.</p>
+</details>
+
+<details>
+<summary>Where is the official DV website?</summary>
+<p><a href="https://dvprogram.state.gov/" target="_blank">dvprogram.state.gov</a></p>
+</details>
+
+<details>
+<summary>How do I confirm payment?</summary>
+<p>Fill in the payment confirmation form. It will open WhatsApp with your confirmation message prepared.</p>
+</details>
+
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<div class="disclaimer">
+<strong>Important Disclaimer</strong><br><br>
+
+Kenya DV Assistance is an independent private service.
+It is not affiliated with, endorsed by, or operated by the
+U.S. Department of State or the U.S. government.
+
+The KSh 300 payment is a private service fee, not an official
+DV entry fee. We do not guarantee selection, visa approval,
+or immigration outcomes.
+
+Official information is available at
+<a href="https://dvprogram.state.gov/" target="_blank">
+the U.S. Department of State DV website</a>.
+</div>
+
+</div>
+</section>
+
 <footer>
-  &copy; 2026 Kenya DV Visa Assistance Portal
+<h3>🇰🇪 Kenya DV Assistance</h3>
+<p>Independent private application support service.</p>
+<p>Official DV website:
+<a href="https://dvprogram.state.gov/">dvprogram.state.gov</a></p>
+<p>© 2026 Kenya DV Assistance</p>
 </footer>
 
+<a class="whatsapp"
+href="https://wa.me/254708424984"
+target="_blank"
+aria-label="WhatsApp">☎</a>
+
 <script>
-  function copyText(text, btn) {
-    navigator.clipboard.writeText(text).then(function() {
-      const original = btn.innerText;
-      btn.innerText = "Copied!";
-      setTimeout(function() {
-        btn.innerText = original;
-      }, 2000);
-    });
-  }
+document.getElementById("paymentForm").addEventListener("submit", function(event) {
 
-  function sendConfirmation(function sendConfirmation() {
-  const name = document.getElementById("fullName").value.trim();
+  event.preventDefault();
+
+  const name = document.getElementById("fullname").value.trim();
   const phone = document.getElementById("phone").value.trim();
-  const code = document.getElementById("mpesaCode").value.trim().toUpperCase();
+  const receipt = document.getElementById("receipt").value.trim();
+  const amount = document.getElementById("amount").value;
+  const message = document.getElementById("message").value.trim();
 
-  if (!name || !phone || !code) {
-    alert("Please fill in all fields.");
-    return;
-  }
+  const text =
+    "PAYMENT CONFIRMATION\n\n" +
+    "Name: " + name + "\n" +
+    "Phone: " + phone + "\n" +
+    "M-Pesa Code: " + receipt + "\n" +
+    "Amount: " + amount + "\n" +
+    "Message: " + (message || "None");
 
-  const message =
-    Hello, I have paid KSh 300 for DV Visa Assistance.\n +
-    Name: ${name}\n +
-    Phone: ${phone}\n +
-    M-Pesa Code: ${code};
+  const whatsapp = "https://wa.me/254708424984?text=" +
+    encodeURIComponent(text);
 
-  const whatsappURL =
-    https://wa.me/254708424984?text=${encodeURIComponent(message)};
+  window.location.href = whatsapp;
 
-  window.open(whatsappURL, "_blank");
-}) {
-    const name = document.getElementById("fullName").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const code = document.getElementById("mpesaCode").value.trim().toUpperCase();
-
-    if (!name || !phone || !code) {
-      alert("Please fill in your Full Name, Phone Number, and M-Pesa Transaction Code.");
-      return;
-    }
-
-    const message = "Hello, I have paid KSh 300 for DV Visa Assistance.\nName: " + name + "\nPhone: " + phone + "\nM-Pesa Code: " + code;
-    const waLink = "https://wa.me/254708424984?text=" + encodeURIComponent(message);
-    window.open(waLink, "_blank");
-  }
+});
 </script>
 
 </body>
-</html>
+  </html>
